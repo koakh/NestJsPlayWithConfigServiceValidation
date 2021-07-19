@@ -4,19 +4,18 @@ import { IsString, validateSync } from 'class-validator';
 export class EnvironmentVariables {
   @IsString()
   logger: string;
-  // TODO keep it simple and leave bellow outside
-  // // @IsNumber()
-  // httpsServerPort: number;
-  // // @IsString()
-  // httpsKeyFile: string;
-  // // @IsString()
-  // httpsCertFile: string;
-  // // @IsString()
-  // refreshTokenSkipIncrementVersion: string;
-  // // @IsBoolean()
-  // corsOriginEnabled: boolean;
-  // // @IsString()
-  // corsOriginReactFrontend: string;
+  // @IsNumber()
+  httpsServerPort: number;
+  // @IsString()
+  httpsKeyFile: string;
+  // @IsString()
+  httpsCertFile: string;
+  // @IsString()
+  refreshTokenSkipIncrementVersion: boolean;
+  // @IsBoolean()
+  corsOriginEnabled: boolean;
+  // @IsString()
+  corsOriginReactFrontend: string;
 }
 
 // TODO pasted from docs
