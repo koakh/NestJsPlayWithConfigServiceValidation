@@ -1,3 +1,4 @@
+import { Logger } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { IsBoolean, IsNumber, IsString, validateSync } from 'class-validator';
 
@@ -19,6 +20,7 @@ export class EnvironmentVariables {
 }
 
 export function validate(config: Record<string, unknown>) {
+  Logger.log(JSON.stringify(config, undefined, 2));
   const validatedConfig = plainToClass(EnvironmentVariables, config, {
     enableImplicitConversion: true,
   });
