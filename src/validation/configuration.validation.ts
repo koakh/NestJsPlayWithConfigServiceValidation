@@ -1,24 +1,23 @@
 import { plainToClass } from 'class-transformer';
-import { IsString, validateSync } from 'class-validator';
+import { IsBoolean, IsNumber, IsString, validateSync } from 'class-validator';
 
 export class EnvironmentVariables {
   @IsString()
   logger: string;
-  // @IsNumber()
+  @IsNumber()
   httpsServerPort: number;
-  // @IsString()
+  @IsString()
   httpsKeyFile: string;
-  // @IsString()
+  @IsString()
   httpsCertFile: string;
-  // @IsString()
+  @IsString()
   refreshTokenSkipIncrementVersion: boolean;
-  // @IsBoolean()
+  @IsBoolean()
   corsOriginEnabled: boolean;
-  // @IsString()
+  @IsString()
   corsOriginReactFrontend: string;
 }
 
-// TODO pasted from docs
 export function validate(config: Record<string, unknown>) {
   const validatedConfig = plainToClass(EnvironmentVariables, config, {
     enableImplicitConversion: true,
